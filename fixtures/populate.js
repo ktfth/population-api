@@ -18,8 +18,21 @@ const populations = [
 	{ uf: 'BA', population: 14812617 },
 ];
 
-for (let i = 0; i < populations.length; i += 1) {
-	populationService
-		.create(populations[i])
-		.then(res => console.log(res));
-}
+populationService
+	.find()
+	.then(res => {
+		if (!res.total) {
+			for (let i = 0; i < populations.length; i += 1) {
+				populationService
+					.create(populations[i])
+					.then(res => {
+						console.log(res);
+						if (i === (populations.length - 1)) {
+							process.exit(0);
+						}
+					});
+			}
+		} else {
+			process.exit(0);
+		}
+	});
