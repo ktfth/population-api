@@ -13,6 +13,9 @@ populationService.on('created', popuplation => console.log('Created a population
 
 const populations = [
 	{ uf: 'SP', population: 45538936 },
+	{ uf: 'RJ', population: 17159960 },
+	{ uf: 'PE', population: 9496294 },
+	{ uf: 'BA', population: 14812617 },
 ];
 
 for (let i = 0; i < populations.length; i += 1) {

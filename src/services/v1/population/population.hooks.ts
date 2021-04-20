@@ -1,8 +1,9 @@
 
+import selectUf from '../../../hooks/select-uf';
 export default {
   before: {
     all: [],
-    find: [],
+    find: [selectUf()],
     get: [],
     create: [],
     update: [],
